@@ -1,0 +1,15 @@
+{
+    "wallets": [
+      {"id": 1, "walletName": "Merkulove", "walletIncrease": 64.60},
+      {"id": 2, "walletName": "CrTrader", "walletIncrease": 35.90},
+      {"id": 3, "walletName": "Falcon9", "walletIncrease": 31.04},
+      {"id": 4, "walletName": "Singh", "walletIncrease": 28.80},
+      {"id": 5, "walletName": "Cryptodeter", "walletIncrease": 28.30},
+      {"id": 6, "walletName": "Codecrypto", "walletIncrease": 24.60},
+      {"id": 7, "walletName": "Bitcoinbutler", "walletIncrease": 23.30},
+      {"id": 8, "walletName": "Coinunlike", "walletIncrease": 19.60},
+      {"id": 9, "walletName": "Mars", "walletIncrease": 16.03},
+      {"id": 10, "walletName": "Coinfizzle", "walletIncrease": 14.30},
+      {"id": 11, "walletName": "Orchid", "walletIncrease": 6.35}
+    ]
+  }

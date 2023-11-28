@@ -1,0 +1,30 @@
+:root {
+    --dark-gray-color : #202020;
+    --light-gray-color : #b8b8b8;
+    --border-dark: #333;
+    --yellow: #e0f64b;
+    --green: #1abc7b;
+    --red: #f13005;
+    --transition: 0.3s ease-in-out;
+    --text-light: #848484;
+    --widget-dark: #202020;
+    --text-dark: #b8b8b8;
+
+
+
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    width: 100vw;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+}

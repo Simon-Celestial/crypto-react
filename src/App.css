@@ -1,0 +1,13 @@
+.app-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #171717;
+    align-items: center;
+}
+.site-content {
+    display: flex;
+    width: 1200px;
+    padding: 50px 15px;
+    flex-direction: column;
+}

@@ -1,0 +1,296 @@
+.app-main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 30px;
+
+  .main-column {
+    display: flex;
+    width: 33.33%;
+    height: 100vh;
+    flex-direction: column;
+    padding: 0 15px;
+    overflow-y: hidden;
+
+  }
+
+  .main-column {
+    .crypto-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .leader-cards-container::-webkit-scrollbar {
+      display: none;
+    }
+    .sorting-crypto-cards::-webkit-scrollbar {
+      display: none;
+    }
+
+    .crypto-container {
+      height: 765px;
+      width: 100%;
+      background: var(--dark-gray-color);
+      border-radius: 10px;
+      margin-top: 15px;
+      overflow-y: auto;
+
+      .crypto-card {
+        border-bottom: 1px solid var(--border-dark);
+        align-items: center;
+        display: flex;
+        gap: 8px;
+        padding: 16px;
+
+        .crypto-icon {
+          display: flex;
+          width: 40px;
+          height: 40px;
+          border-radius: 5px;
+          border: 1px solid var(--border-dark);
+          align-items: center;
+          justify-content: center;
+
+          img {
+            max-height: 25px;
+            width: auto;
+          }
+        }
+
+        .crypto-card-title {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          .crypto-card-title-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            h3 {
+              font-size: 14px;
+              color: white;
+              font-weight: 400;
+            }
+
+            h2 {
+              font-size: 12px;
+              color: var(--text-light);
+              font-weight: 400;
+
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .middle-column {
+    background: var(--widget-dark);
+    border-radius: 10px;
+
+    .column-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 15px 0;
+      height: 100%;
+
+      .crypto-sorting-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .sorting-group {
+          display: flex;
+          gap: 20px;
+
+          .sorting-button {
+            display: flex;
+            background: transparent;
+            outline: 0;
+            border: 0;
+            align-items: center;
+            color: var(--text-dark);
+            gap: 5px;
+            font-size: 10px;
+            cursor: pointer;
+            padding: 5px 0;
+
+            .sorting-arrows {
+              display: flex;
+              flex-direction: column;
+            }
+
+          }
+        }
+      }
+
+      .sorting-crypto-cards {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-top: 5px;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto;
+        height: 100%;
+
+        .sorting-crypto-card {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          border: 1px solid var(--border-dark);
+          padding: 17px 15px;
+          border-radius: 10px;
+
+          .sorting-crypto-card-row {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+
+            .sorting-card-row-group {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              .sorting-card-image-block {
+                display: flex;
+                gap: 10px;
+
+                .sorting-card-image {
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  border-radius: 10px;
+                  border: 1px solid var(--border-dark);
+
+                  img {
+                    width: 25px;
+                    margin: auto;
+                  }
+                }
+                .sorting-card-title {
+                  display: flex;
+                  flex-direction: column;
+                  h2 {
+                    font-size: 14px;
+                  }
+                  p {
+                    font-size: 12px;
+                    color: var(--light-gray-color);
+                  }
+                }
+
+              }
+              span {
+                padding: 5px 10px;
+                border-radius: 5px;
+                background: var(--green);
+                font-size: 12px;
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .right-column {
+    .leader-board-container {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 15px;
+
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+    .leader-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
+      overflow-y: auto;
+      width: 100%;
+
+      .leader-card-wrapper {
+        display: flex;
+        border-radius: 10px;
+        align-items: center;
+        padding: 25px 15px;
+
+        &.leader-card-first {
+          background-color: var(--yellow);
+
+          .leader-card-row {
+            .rank-circle {
+              background: black;
+              color: white;
+            }
+          }
+        }
+
+        &.leader-card-others {
+          background-color: var(--widget-dark);
+
+          .leader-card-row {
+            color: white;
+
+            .rank-circle {
+              background: var(--yellow);
+              color: black;
+            }
+          }
+        }
+
+        .leader-card-row {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          color: black;
+          justify-content: space-between;
+
+          .row-part {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            .rank-circle {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              font-size: 10px;
+              font-weight: 600;
+            }
+
+            h2 {
+              font-size: 12px;
+              font-weight: 600;
+            }
+
+            span {
+              background: var(--green);
+              padding: 5px 8px;
+              font-size: 12px;
+              font-weight: 600;
+              color: white;
+              border-radius: 5px;
+            }
+          }
+
+
+        }
+      }
+    }
+
+  }
+}
