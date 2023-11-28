@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from "react";
+import { getWalletData } from "../../API/crypto.js";
 import LeaderCryptoItem from "./LeaderCryptoItem.jsx";
-import React, {useEffect, useState} from "react";
-import {getData, getWalletData} from "../../API/crypto.js";
 
 const LeaderCryptoCards = () => {
     const [leadersData, setLeadersData] = useState([]);
@@ -8,8 +8,8 @@ const LeaderCryptoCards = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getWalletData();
-                setLeadersData(data.data);
+                const walletData = await getWalletData();
+                setLeadersData(walletData);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -18,20 +18,20 @@ const LeaderCryptoCards = () => {
         fetchData();
     }, []);
 
+    console.log(leadersData);
+
     return (
         <>
             {leadersData.length > 0 ? (
-                leadersData.map((wallets) => (
-                    <LeaderCryptoItem
-                        key={id}
-                        wallets={wallets}
-                        isFirst={index === 0}
-                    />
+                leadersData.map((wallet) => (
+
+                    <LeaderCryptoItem key={wallet.id} wallet={wallet} isFirst={index === 0} />
                 ))
             ) : (
                 <p>Loading...</p>
             )}
         </>
-    )
-}
+    );
+};
+
 export default LeaderCryptoCards;
