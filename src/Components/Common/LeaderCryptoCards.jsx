@@ -23,7 +23,7 @@ const LeaderCryptoCards = () => {
     return (
         <>
             {leadersData.length > 0 ? (
-                leadersData.map((wallet) => (
+                leadersData.map((wallet,index) => (
 
                     <LeaderCryptoItem key={wallet.id} wallet={wallet} isFirst={index === 0} />
                 ))

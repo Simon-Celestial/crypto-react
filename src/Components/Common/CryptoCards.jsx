@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import CryptoItem from "./CryptoItem.jsx";
-import { getData } from "../../API/crypto.js";
+import {getData, getMockCryptoData, getWalletData} from "../../API/crypto.js";
 
 const CryptoCards = () => {
-    const [cryptoData, setCryptoData] = useState([]);
+    const [mockData, setMockData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getData();
-                setCryptoData(data.data);
+                const fetchedData = await getMockCryptoData();
+                setMockData(fetchedData);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -18,11 +18,13 @@ const CryptoCards = () => {
         fetchData();
     }, []);
 
+    console.log(mockData);
+
     return (
         <div>
-            {cryptoData.length > 0 ? (
-                cryptoData.map((crypto, index) => (
-                    <CryptoItem key={index} crypto={crypto} />
+            {mockData.length > 0 ? (
+                mockData.map((mock,) => (
+                    <CryptoItem key={mock.id} mock={mock} />
                 ))
             ) : (
                 <p>Loading...</p>

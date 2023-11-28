@@ -10,9 +10,15 @@ export const getData = async () => {
 };
 export const getWalletData = async () => {
     try {
-        let res = await fetch("wallets.json");
-        let data = await res.json();
-        return data;
+        return (await fetch("wallets.json").then((res) => res.json()))?.wallets || [];
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error;
+    }
+};
+export const getMockCryptoData = async () => {
+    try {
+        return (await fetch("mockCrypto.json").then((res) => res.json()))?.mockCrypto || [];
     } catch (error) {
         console.error("Error fetching data:", error);
         throw error;
