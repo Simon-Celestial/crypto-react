@@ -18,8 +18,6 @@ const CryptoCards = () => {
         fetchData();
     }, []);
 
-    console.log(mockData);
-
     return (
         <div>
             {mockData.length > 0 ? (

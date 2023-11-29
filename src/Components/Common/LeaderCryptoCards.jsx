@@ -18,8 +18,6 @@ const LeaderCryptoCards = () => {
         fetchData();
     }, []);
 
-    console.log(leadersData);
-
     return (
         <>
             {leadersData.length > 0 ? (
