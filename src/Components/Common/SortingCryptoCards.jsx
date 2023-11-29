@@ -1,28 +1,32 @@
 import SortingCryptoCardsItems from "./SortingCryptoCardsItems.jsx";
-import React, { useEffect, useState } from "react";
-import { getData } from "../../API/crypto.js";
-import CryptoItem from "./CryptoItem.jsx";
 
-const SortingCryptoCards = () => {
-    const [sortingData, setSortingData] = useState([]);
+const SortingCryptoCards = ({ data, sortCriteria, sortOrder }) => {
+    const sortedData = data.slice().sort((a, b) => {
+        if (sortCriteria === 'name') {
+            const nameA = a[sortCriteria].toUpperCase();
+            const nameB = b[sortCriteria].toUpperCase();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await getData();
-                setSortingData(data.data);
-            } catch (error) {
-                console.error("Error fetching data:", error);
+            if (sortOrder === 'asc') {
+                return nameA.localeCompare(nameB);
+            } else {
+                return nameB.localeCompare(nameA);
             }
-        };
+        } else {
+            const valueA = parseFloat(a[sortCriteria]);
+            const valueB = parseFloat(b[sortCriteria]);
 
-        fetchData();
-    }, []);
+            if (sortOrder === 'asc') {
+                return valueA - valueB;
+            } else {
+                return valueB - valueA;
+            }
+        }
+    });
 
     return (
         <>
-            {sortingData.length > 0 ? (
-                sortingData.map((crypto, rank) => (
+            {sortedData.length > 0 ? (
+                sortedData.map((crypto, rank) => (
                     <SortingCryptoCardsItems key={rank} crypto={crypto} />
                 ))
             ) : (

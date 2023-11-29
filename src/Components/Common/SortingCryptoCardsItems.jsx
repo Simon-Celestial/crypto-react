@@ -12,7 +12,8 @@ const SortingCryptoCardsItems = (
                     <Star size={18} color="var(--text-light)"/>
                     <div className="sorting-card-image-block">
                         <div className="sorting-card-image">
-                            <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="Crypto image"/>
+                            <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png"
+                                 alt="Crypto image"/>
                         </div>
                         <div className="sorting-card-title">
                             <h2>{crypto?.name}</h2>
@@ -21,7 +22,8 @@ const SortingCryptoCardsItems = (
                     </div>
                 </div>
                 <div className="sorting-card-row-group">
-                    <span>{parseFloat(crypto?.changePercent24Hr).toFixed(2)} %</span>
+                    <span
+                        style={crypto?.changePercent24Hr > 0 ? {background: "green"} : {background: "red"}}>{parseFloat(crypto?.changePercent24Hr).toFixed(2)} %</span>
                 </div>
             </div>
         </div>
